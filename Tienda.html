@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>MENU - TIENDITA</title>
+</head>
+<body class="bg-inverse">
+
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="Multimedia/firewebp.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                TIENDITA 
+            </a>
+        </div>
+    </nav>
+
+    <div class="container p-4 mt-5 bg-muted-secondary rounded shadow">
+        <div class="text-center mb-3">
+            <h1 class="text-center text-dark">TIENDITA</h1>
+            <hr>
+
+            <div class="text-start mb-3">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn-solid btn-styled theme-success" id="btnAbrirModal">
+                        <i class="bi bi-person-plus"></i> Agregar</button>
+                </div>
+            </div>
+
+            <table class="table table-striped table-hover mt-3">
+                <thead>
+                    <tr class="text-center">
+                        <th>PRODUCTO</th>
+                        <th>PRECIO</th>
+                        <th>ACTION</th>
+        
+                    </tr>
+                </thead>
+                <tbody id="productos">
+
+                </tbody>
+            </table>
+
+            <dialog id="addProducto" class="p-4 rounded border-0 shadow">
+                <div class="dialog-header d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="dialog-title m-0 fw-bold">AGREGAR PRODUCTO</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+                </div>
+                
+                <div class="dialog-body text-start">
+                    <label for="nombre" class="form-label fw-bold">NOMBRE</label>
+                    <input type="text" id="nombre" class="form-control mb-3">
+
+                    <label for="precio" class="form-label fw-bold">PRECIO</label>
+                    <input type="number" step="0.01" id="precio" class="form-control mb-3">
+                </div>
+
+                <div class="dialog-footer d-flex justify-content-end gap-2 mt-3">
+                    <button type="button" class="btn-solid theme-danger" data-bs-dismiss="dialog">
+                        <i class="bi bi-trash2"></i> CANCELAR
+                    </button>
+                    <button type="button" class="btn-solid theme-success" id="btnSave">
+                        <i class="bi bi-save2-fill"></i> GUARDAR
+                    </button>
+                </div>
+            </dialog>
+
+
+
+
+             <dialog id="editProducto" class="p-4 rounded border-0 shadow">
+                <div class="dialog-header d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="dialog-title m-0 fw-bold">EDITAR PRODUCTO</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+                </div>
+                
+                <div class="dialog-body text-start">
+
+                    <label for="nombre" class="form-label fw-bold">NOMBRE</label>
+                    <input type="text" id="nombreEditar" class="form-control mb-3">
+
+                    <label for="precio" class="form-label fw-bold">PRECIO</label>
+                    <input type="number" step="0.01" id="precioEditar" class="form-control mb-3">
+                </div>
+
+                <div class="dialog-footer d-flex justify-content-end gap-2 mt-3">
+                    <button type="button" class="btn-solid theme-danger" data-bs-dismiss="dialog">
+
+                        <input type="hidden" id="posicion">
+                        <i class="bi bi-trash2"></i> CANCELAR
+                    </button>
+                    <button type="button" class="btn-solid theme-success" id="btnEditar">
+                        <i class="bi bi-save2-fill"></i> GUARDAR
+                    </button>
+                </div>
+               
+            </dialog>
+
+        </div>
+    </div>
+
+    <script type="module" src="java/bootstrap.bundle.min.js"></script>
+    <script src="java/sweetalert2.all.min.js"></script>
+    <script src="java/06Tiendita.js"></script>
+</body>
+</html>
